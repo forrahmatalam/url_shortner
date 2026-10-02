@@ -5,7 +5,7 @@ const urlSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    shortUrl: {
+    shortCode: {
         type: String,
         required: true
     },
@@ -22,4 +22,3 @@ const urlSchema = new mongoose.Schema({
 const urlModel = mongoose.model('Url', urlSchema); //collection name and schema name 
 
 export default urlModel;
-
