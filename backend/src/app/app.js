@@ -6,7 +6,9 @@ import urlModel from '../models/url.model.js';
 const app = express();
 app.use(express.json());
 
+
 app.use("/api/url",urlRoutes);
+
 
 //Redirect Api
 app.get("/:code",async(req,res)=>{

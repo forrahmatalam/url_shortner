@@ -53,7 +53,24 @@ router.get("/",async(req,res)=>{
     })
 });
 
+router.delete("/:id", async (req, res) => {
 
+    const { id } = req.params;
+
+    const url = await urlModel.findById(id);
+
+    if (!url) {
+        return res.status(404).json({
+            message: "Url not found"
+        });
+    }
+
+    await urlModel.findByIdAndDelete(id);
+
+    return res.status(200).json({
+        message: "Url deleted successfully"
+    });
+});
 
 export default router;
 
